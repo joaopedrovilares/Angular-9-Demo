@@ -1,0 +1,55 @@
+<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+    <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+        <span class="login100-form-title p-b-37">
+            Angular Demo
+
+        </span>
+
+        <p> (Auth off) </p>
+
+
+        <form  (ngSubmit)="onSubmit()" class="login-form validate-form">
+
+            Email
+            <div class="wrap-input100 validate-input m-b-20" data-validate="Enter Email">
+                <input class="form-control" type="text" placeholder="Enter a random email" formControlName="email"
+                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                <span class="focus-input100"></span>
+            </div>
+
+            Password
+            <div class="wrap-input100 validate-input m-b-25" data-validate="Enter Password">
+                <input class="form-control" type="password" placeholder="Enter a random Password"
+                    formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="container-login100-form-btn">
+
+
+                <a class="login100-form-btn">Sign In</a>
+
+            </div>
+
+            <div class="errors-container"
+                *ngIf="submitted && f.email.errors || submitted && f.password.errors || errorEmail">
+                <div *ngIf="errorEmail">
+                    <div class="error-message">{{ errorEmail }}</div>
+                </div>
+
+                <div *ngIf="submitted && f.email.errors">
+                    <div class="error-message" *ngIf="f.email.errors.required">Email is required</div>
+                    <div class="error-message" *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                </div>
+
+                <div *ngIf="submitted && f.password.errors">
+                    <div class="error-message" *ngIf="f.password.errors.required">Password is required</div>
+                    <div class="error-message" *ngIf="f.password.errors.minlength">Password must be at least 6
+                        characters</div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

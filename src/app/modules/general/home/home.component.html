@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">Galatic Simulator</a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLinkActive="active">
+          <a class="navbar-brand" routerLink="/home">
+            Home
+          </a></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLinkActive="active">
+          <a class="navbar-brand active" routerLink="/dashboard/fleet" routerLinkActive="active">
+            Manage your Fleet!
+          </a>
+          <span class="sr-only"></span></a>
+      </li>
+    </ul>
+
+    <div class="nav-item active">
+      <a class="nav-link">
+        <a class="navbar-brand" routerLink="/"> Logout </a>
+      </a>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+
+  <a type="button" class="btn btn-light" routerLinkActive="active"> Fleets </a>
+  <a type="button" class="btn btn-light" routerLinkActive="active"> Transport Ships </a>
+  <a type="button" class="btn btn-light" routerLinkActive="active"> Support Squads </a>
+  <a type="button" class="btn btn-light" routerLinkActive="active"> Battleships </a>
+
+</div>
+
+<br>
+
+<div class="container">
+
+  <router-outlet>
+
+  </router-outlet>
+
+</div>
